@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HelloController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,3 +18,6 @@ Route::get('/home', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+// using a controller to create a route
+Route::get('/hello', [HelloController::class, 'hello']);
